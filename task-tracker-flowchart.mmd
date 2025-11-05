@@ -1,0 +1,36 @@
+flowchart TD
+  Start([Start])
+  CheckFile{tasks.json exists?}
+  CreateFile[Create tasks.json ([])]
+  Load[Load tasks.json]
+  ParseArgs[Parse CLI args]
+  CmdAdd[/add "description"/]
+  CmdUpdate[/update <id> "description"/]
+  CmdDelete[/delete <id>/]
+  CmdMarkIn[/mark-in-progress <id>/]
+  CmdMarkDone[/mark-done <id>/]
+  CmdList[/list [status]/]
+  HandleInvalid[Show usage/help]
+  Save[Save tasks.json]
+  PrintOk[Print success message]
+  End([End])
+
+  Start --> CheckFile
+  CheckFile -- No --> CreateFile --> Load
+  CheckFile -- Yes --> Load
+  Load --> ParseArgs
+  ParseArgs -->|add| CmdAdd
+  ParseArgs -->|update| CmdUpdate
+  ParseArgs -->|delete| CmdDelete
+  ParseArgs -->|mark-in-progress| CmdMarkIn
+  ParseArgs -->|mark-done| CmdMarkDone
+  ParseArgs -->|list| CmdList
+  ParseArgs -->|other| HandleInvalid
+
+  CmdAdd --> Save --> PrintOk --> End
+  CmdUpdate --> Save --> PrintOk --> End
+  CmdDelete --> Save --> PrintOk --> End
+  CmdMarkIn --> Save --> PrintOk --> End
+  CmdMarkDone --> Save --> PrintOk --> End
+  CmdList --> End
+  HandleInvalid --> End
