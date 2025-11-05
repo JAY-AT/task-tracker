@@ -39,7 +39,7 @@ Below is the complete program flowchart rendered in Mermaid (supported directly 
 flowchart TD
   Start([Start])
   CheckFile{tasks.json exists?}
-  CreateFile[Create tasks.json ([])]
+  CreateFile[Create tasks.json - empty list]
   Load[Load tasks.json]
   ParseArgs[Parse CLI args]
   CmdAdd[/add "description"/]

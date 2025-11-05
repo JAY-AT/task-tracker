@@ -1,7 +1,7 @@
 flowchart TD
   Start([Start])
   CheckFile{tasks.json exists?}
-  CreateFile[Create tasks.json ([])]
+  CreateFile[Create tasks.json - empty list]
   Load[Load tasks.json]
   ParseArgs[Parse CLI args]
   CmdAdd[/add "description"/]
