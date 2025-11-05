@@ -4,6 +4,8 @@ import os
 from datetime import datetime
 
 TASKS_FILE = "tasks.json"
+BASE_DIR = os.path.dirname(__file__)
+TASKS_FILE = os.path.join(BASE_DIR, "tasks.json")
 
 
 def load_tasks():

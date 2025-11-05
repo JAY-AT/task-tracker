@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "description": "tulog",
+        "status": "todo",
+        "createdAt": "2025-11-06T06:47:37",
+        "updatedAt": "2025-11-06T06:47:37"
+    },
+    {
+        "id": 2,
+        "description": "kain",
+        "status": "todo",
+        "createdAt": "2025-11-06T06:47:44",
+        "updatedAt": "2025-11-06T06:47:44"
+    },
+    {
+        "id": 3,
+        "description": "check json file",
+        "status": "todo",
+        "createdAt": "2025-11-06T06:50:53",
+        "updatedAt": "2025-11-06T06:50:53"
+    }
+]

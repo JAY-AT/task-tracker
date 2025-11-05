@@ -6,6 +6,9 @@ from datetime import datetime
 from task_cli import load_tasks, save_tasks, get_new_id, find_task  # reuse CLI logic
 
 TASKS_FILE = "tasks.json"
+BASE_DIR = os.path.join(os.path.dirname(__file__), "program_files")
+os.makedirs(BASE_DIR, exist_ok=True)
+TASKS_FILE = os.path.join(BASE_DIR, "tasks.json")
 
 class TaskTrackerApp(tk.Tk):
     def __init__(self):
